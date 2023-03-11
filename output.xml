@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.9.8 on win32)" generated="20230228 12:01:28.979" rpa="false" schemaversion="3">
+<suite id="s1" name="CreateNewUser browser" source="C:\Users\User\PycharmProjects\rf_browsertest\CreateNewUser_browser.robot">
+<test id="s1-t1" name="Create new user for the luma app" line="8">
+<kw name="Precondition for new user account" library="Browserlib_Keywords">
+<kw name="New Browser" library="Browser">
+<arg>Chromium</arg>
+<arg>headless=false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20230228 12:01:30.069" level="INFO">{"browser": "chromium", "headless": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "deprecated_pos_args": [], "tracesDir": "C:\\Users\\User\\PycharmProjects\\rf_browsertest\\browser\\traces\\bf5be12f-854a-47a4-8eb5-1f115d7cc232"}</msg>
+<msg timestamp="20230228 12:01:31.319" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"deprecated_pos_args":[],"tracesDir":"C:\\Users\\User\\PycharmProjects\\rf_browsertest\\browser\\traces\\bf5be12f-854a-47a4-8eb5-1f115d7cc232"}</msg>
+<status status="PASS" starttime="20230228 12:01:30.068" endtime="20230228 12:01:31.320"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20230228 12:01:33.201" level="INFO">Successfully initialized new page object and opened url: https://magento.softwaretestingboard.com</msg>
+<msg timestamp="20230228 12:01:33.201" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<status status="PASS" starttime="20230228 12:01:31.320" endtime="20230228 12:01:33.201"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${CREATE_NEW_ACCOUNT_LINK}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230228 12:01:33.201" endtime="20230228 12:01:33.999"/>
+</kw>
+<status status="PASS" starttime="20230228 12:01:30.067" endtime="20230228 12:01:34.000"/>
+</kw>
+<kw name="Enter required details for new user" library="Browserlib_Keywords">
+<kw name="Enter Enter new user firstname" library="Browserlib_Keywords">
+<kw name="First Name" library="FakerLibrary">
+<var>${firstname}</var>
+<msg timestamp="20230228 12:01:34.001" level="INFO">${firstname} = Bailey</msg>
+<status status="PASS" starttime="20230228 12:01:34.000" endtime="20230228 12:01:34.001"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${firstname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230228 12:01:34.001" level="INFO">Bailey</msg>
+<status status="PASS" starttime="20230228 12:01:34.001" endtime="20230228 12:01:34.001"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${firstname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230228 12:01:34.001" level="INFO">${firstname} = Bailey</msg>
+<status status="PASS" starttime="20230228 12:01:34.001" endtime="20230228 12:01:34.001"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${CREATEACCT_FIRSTNAME_FIELD}</arg>
+<arg>${firstname}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230228 12:01:34.002" level="INFO">Fills the text 'Bailey' in the given field.</msg>
+<status status="PASS" starttime="20230228 12:01:34.001" endtime="20230228 12:01:34.124"/>
+</kw>
+<status status="PASS" starttime="20230228 12:01:34.000" endtime="20230228 12:01:34.124"/>
+</kw>
+<kw name="Enter Enter new user lastname" library="Browserlib_Keywords">
+<kw name="Last Name" library="FakerLibrary">
+<var>${lastname}</var>
+<msg timestamp="20230228 12:01:34.125" level="INFO">${lastname} = Pena</msg>
+<status status="PASS" starttime="20230228 12:01:34.124" endtime="20230228 12:01:34.125"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${lastname}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230228 12:01:34.125" level="INFO">Pena</msg>
+<status status="PASS" starttime="20230228 12:01:34.125" endtime="20230228 12:01:34.125"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${lastname}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230228 12:01:34.125" level="INFO">${lastname} = Pena</msg>
+<status status="PASS" starttime="20230228 12:01:34.125" endtime="20230228 12:01:34.125"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${CREATEACCT_LASTNAME_FIELD}</arg>
+<arg>${lastname}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230228 12:01:34.126" level="INFO">Fills the text 'Pena' in the given field.</msg>
+<status status="PASS" starttime="20230228 12:01:34.125" endtime="20230228 12:01:34.249"/>
+</kw>
+<status status="PASS" starttime="20230228 12:01:34.124" endtime="20230228 12:01:34.249"/>
+</kw>
+<kw name="Enter email for creating new user" library="Browserlib_Keywords">
+<kw name="Email" library="FakerLibrary">
+<var>${email}</var>
+<msg timestamp="20230228 12:01:34.250" level="INFO">${email} = elizabeth71@example.org</msg>
+<status status="PASS" starttime="20230228 12:01:34.250" endtime="20230228 12:01:34.250"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${email}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230228 12:01:34.250" level="INFO">elizabeth71@example.org</msg>
+<status status="PASS" starttime="20230228 12:01:34.250" endtime="20230228 12:01:34.250"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20230228 12:01:34.251" level="INFO">${email} = elizabeth71@example.org</msg>
+<status status="PASS" starttime="20230228 12:01:34.251" endtime="20230228 12:01:34.251"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${CREATEACCT_EMAIL_FIELD}</arg>
+<arg>${email}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230228 12:01:34.251" level="INFO">Fills the text 'elizabeth71@example.org' in the given field.</msg>
+<status status="PASS" starttime="20230228 12:01:34.251" endtime="20230228 12:01:34.304"/>
+</kw>
+<status status="PASS" starttime="20230228 12:01:34.249" endtime="20230228 12:01:34.305"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${CREATEACCT_PASSWORD_FIELD}</arg>
+<arg>Testable123</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230228 12:01:34.305" level="INFO">Fills the text 'Testable123' in the given field.</msg>
+<status status="PASS" starttime="20230228 12:01:34.305" endtime="20230228 12:01:34.399"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>${CREATEACCT_CONFIRMPASSWORD_FIELD}</arg>
+<arg>Testable123</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20230228 12:01:34.399" level="INFO">Fills the text 'Testable123' in the given field.</msg>
+<status status="PASS" starttime="20230228 12:01:34.399" endtime="20230228 12:01:34.480"/>
+</kw>
+<status status="PASS" starttime="20230228 12:01:34.000" endtime="20230228 12:01:34.480"/>
+</kw>
+<kw name="Click create account button and assert that user has been created successfully" library="Browserlib_Keywords">
+<kw name="Click" library="Browser">
+<arg>${CREATEACCT_BUTTON}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" starttime="20230228 12:01:34.481" endtime="20230228 12:01:36.688"/>
+</kw>
+<kw name="Get Text" library="Browser">
+<arg>xpath=//*[@id="maincontent"]/div[1]/div[2]/div/div/div</arg>
+<arg>==</arg>
+<arg>Thank you for registering with Fake Online Clothing Store.</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<msg timestamp="20230228 12:01:37.421" level="INFO">Text: 'Thank you for registering with Fake Online Clothing Store.'</msg>
+<status status="PASS" starttime="20230228 12:01:36.688" endtime="20230228 12:01:37.422"/>
+</kw>
+<status status="PASS" starttime="20230228 12:01:34.480" endtime="20230228 12:01:37.422"/>
+</kw>
+<status status="PASS" starttime="20230228 12:01:30.064" endtime="20230228 12:01:37.422"/>
+</test>
+<doc>Test cases for browser library tests</doc>
+<status status="PASS" starttime="20230228 12:01:28.982" endtime="20230228 12:01:37.531"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="CreateNewUser browser">CreateNewUser browser</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
