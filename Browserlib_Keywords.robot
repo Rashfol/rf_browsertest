@@ -39,7 +39,9 @@ Navigate to home page
 Precondition for new user account
   new browser  Chromium  headless=false
   new page  ${URL}
-  click   ${CREATE_NEW_ACCOUNT_LINK}
+  click    xpath=/html/body/div[1]/header/div[1]/div/ul/li[2]/a
+  click    xpath=//*[@id="maincontent"]/div[3]/div/div[2]/div[2]/div[2]/div/div/a/span
+
 
 Edit user address details
   [Arguments]   ${phone_number}  ${street_address}  ${city}  ${postcode}
@@ -135,9 +137,9 @@ Delete address
 
 Supply information to create account for new user and omit Required fields
        [Arguments]  ${firstname}   ${lastname}    ${email}    ${password}    ${confirmedpassword}
-       Wait and input Text            ${CREATE_NEW_ACCOUNT_FIRSTNAME}     ${firstname}
-       Wait and input Text            ${CREATE_NEW_ACCOUNT_LASTNAME}      ${lastname}
-       Wait and input Text            ${CREATE_NEW_ACCOUNT_USERNAME}      ${email}
-       Wait and input Text        ${CREATE_NEW_ACCOUNT_PASSWORD}      ${password}
-       Wait and input Text        ${CREATE_NEW_ACCOUNT_CONFIRMED}     ${confirmedpassword}
-       Wait and Click Element         ${CREATE_NEW_ACCOUNT_BUTTON}
+       Fill Text            ${CREATEACCT_FIRSTNAME_FIELD}    ${firstname}
+       Fill Text            ${CREATEACCT_LASTNAME_FIELD}     ${lastname}
+       Fill Text            ${CREATEACCT_EMAIL_FIELD}      ${email}
+       Fill Text        ${CREATEACCT_PASSWORD_FIELD}      ${password}
+       Fill Text        ${CREATEACCT_CONFIRMPASSWORD_FIELD}     ${confirmedpassword}
+       Click             ${CREATEACCT_BUTTON}
