@@ -132,3 +132,12 @@ Wait and input text
 Delete address
    wait and click element  xpath://span[text() = 'Delete' ]
    wait and click element  xpath://span[text() = 'OK' ]
+
+Supply information to create account for new user and omit Required fields
+       [Arguments]  ${firstname}   ${lastname}    ${email}    ${password}    ${confirmedpassword}
+       Wait and input Text            ${CREATE_NEW_ACCOUNT_FIRSTNAME}     ${firstname}
+       Wait and input Text            ${CREATE_NEW_ACCOUNT_LASTNAME}      ${lastname}
+       Wait and input Text            ${CREATE_NEW_ACCOUNT_USERNAME}      ${email}
+       Wait and input Text        ${CREATE_NEW_ACCOUNT_PASSWORD}      ${password}
+       Wait and input Text        ${CREATE_NEW_ACCOUNT_CONFIRMED}     ${confirmedpassword}
+       Wait and Click Element         ${CREATE_NEW_ACCOUNT_BUTTON}
