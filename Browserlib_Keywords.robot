@@ -20,9 +20,9 @@ ${CREATEACCT_LASTNAME_FIELD}           id=lastname
 ${CREATEACCT_EMAIL_FIELD}            id=email_address
 ${CREATEACCT_PASSWORD_FIELD}           id=password
 ${CREATEACCT_CONFIRMPASSWORD_FIELD}  id=password-confirmation
-${CREATEACCT_BUTTON}        xpath=//span[text() = 'Create an Account' ]
-${ADDRESS_BOOK}             xpath=//*[@id="block-collapsible-nav"]/ul/li[6]
-${EDITADDRESS_PHONE}        id=telephone
+${CREATEACCT_BUTTON}            xpath=(//button[@title='Create an Account'])[1]
+${ADDRESS_BOOK}                xpath=//*[@id="block-collapsible-nav"]/ul/li[6]
+${EDITADDRESS_PHONE}         id=telephone
 ${EDITADDRESS_STREET}     name=street[]
 ${EDITADDRESS_CITY}       name=city
 ${EDITADDRESS_STATE}        id=region_id
@@ -140,6 +140,7 @@ Supply information to create account for new user and omit Required fields
        Fill Text            ${CREATEACCT_FIRSTNAME_FIELD}    ${firstname}
        Fill Text            ${CREATEACCT_LASTNAME_FIELD}     ${lastname}
        Fill Text            ${CREATEACCT_EMAIL_FIELD}      ${email}
-       Fill Text        ${CREATEACCT_PASSWORD_FIELD}      ${password}
-       Fill Text        ${CREATEACCT_CONFIRMPASSWORD_FIELD}     ${confirmedpassword}
-       Click             ${CREATEACCT_BUTTON}
+       Fill Text                ${CREATEACCT_PASSWORD_FIELD}      ${password}
+       Fill Text               ${CREATEACCT_CONFIRMPASSWORD_FIELD}     ${confirmedpassword}
+       get element              ${CREATEACCT_BUTTON}
+       Click                   ${CREATEACCT_BUTTON}
