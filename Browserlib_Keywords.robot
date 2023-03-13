@@ -20,9 +20,9 @@ ${CREATEACCT_LASTNAME_FIELD}           id=lastname
 ${CREATEACCT_EMAIL_FIELD}            id=email_address
 ${CREATEACCT_PASSWORD_FIELD}           id=password
 ${CREATEACCT_CONFIRMPASSWORD_FIELD}  id=password-confirmation
-${CREATEACCT_BUTTON}        xpath=//span[text() = 'Create an Account' ]
-${ADDRESS_BOOK}             xpath=//*[@id="block-collapsible-nav"]/ul/li[6]
-${EDITADDRESS_PHONE}        id=telephone
+${CREATEACCT_BUTTON}            xpath=(//button[@title='Create an Account'])[1]
+${ADDRESS_BOOK}                xpath=//*[@id="block-collapsible-nav"]/ul/li[6]
+${EDITADDRESS_PHONE}         id=telephone
 ${EDITADDRESS_STREET}     name=street[]
 ${EDITADDRESS_CITY}       name=city
 ${EDITADDRESS_STATE}        id=region_id
@@ -39,7 +39,9 @@ Navigate to home page
 Precondition for new user account
   new browser  Chromium  headless=false
   new page  ${URL}
-  click   ${CREATE_NEW_ACCOUNT_LINK}
+  click    xpath=/html/body/div[1]/header/div[1]/div/ul/li[2]/a
+  click    xpath=//*[@id="maincontent"]/div[3]/div/div[2]/div[2]/div[2]/div/div/a/span
+
 
 Edit user address details
   [Arguments]   ${phone_number}  ${street_address}  ${city}  ${postcode}
@@ -132,3 +134,13 @@ Wait and input text
 Delete address
    wait and click element  xpath://span[text() = 'Delete' ]
    wait and click element  xpath://span[text() = 'OK' ]
+
+Supply information to create account for new user and omit Required fields
+       [Arguments]  ${firstname}   ${lastname}    ${email}    ${password}    ${confirmedpassword}
+       Fill Text            ${CREATEACCT_FIRSTNAME_FIELD}    ${firstname}
+       Fill Text            ${CREATEACCT_LASTNAME_FIELD}     ${lastname}
+       Fill Text            ${CREATEACCT_EMAIL_FIELD}      ${email}
+       Fill Text                ${CREATEACCT_PASSWORD_FIELD}      ${password}
+       Fill Text               ${CREATEACCT_CONFIRMPASSWORD_FIELD}     ${confirmedpassword}
+       get element              ${CREATEACCT_BUTTON}
+       Click                   ${CREATEACCT_BUTTON}
