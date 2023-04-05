@@ -79,7 +79,7 @@ Enter required details for new user and omit Firstname
    wait and input text     ${CREATEACCT_CONFIRMPASSWORD_FIELD}  Testable123
    wait and click element  ${CREATEACCT_BUTTON}
 
-Enter details for new user and omit required fields
+#Enter details for new user and omit required fields
   [Arguments]     ${firstname}  ${lastname}  ${email}  ${password}  ${confirmpassword}
    wait and input text     ${CREATEACCT_FIRSTNAME_FIELD}  ${firstname}
    wait and input text     ${CREATEACCT_LASTNAME_FIELD}  ${lastname}
@@ -147,9 +147,9 @@ Supply information to create account for new user and omit Required fields
 
 Enter details for new user and omit required fields
     [Arguments]  ${firstname}   ${lastname}   ${email}  ${password}  ${confirmpassword}
-    wait and Input Text    ${CREATEACC_FIRSTNAME_FIELD}   ${firstname}
-    wait and Input Text    ${CREATEACC_LASTNAME_FIELD}   ${lastname}
-    wait and Input Text    ${CREATEACC_EMAIL_FIELD}   ${email}
-    wait and Input Text     ${CREATEACC_PASSWORD_FIELD}   ${password}
-    wait and Input Text     ${CREATEACC_CONFIRMPASS_FIELD}   ${confirmpassword}
-    wait and Click Element   ${CREATEACC_BUTTON}
+    fill text    ${CREATEACCT_FIRSTNAME_FIELD}   ${firstname}
+    fill text    ${CREATEACCT_LASTNAME_FIELD}   ${lastname}
+    fill text    ${CREATEACCT_EMAIL_FIELD}   ${email}
+    fill text     ${CREATEACCT_PASSWORD_FIELD}   ${password}
+    fill text     ${CREATEACCT_CONFIRMPASSWORD_FIELD}   ${confirmpassword}
+    Click         ${CREATEACCT_BUTTON}
